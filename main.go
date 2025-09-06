@@ -3,15 +3,18 @@ package main
 import (
 	"context"
 	"log"
+	"os"
+
+	_ "github.com/joho/godotenv/autoload"
 
 	"github.com/ethereum/go-ethereum/ethclient"
 )
 
-var infuraKey = ""
-
 func main() {
 
-	c, err := ethclient.DialContext(context.Background(), infuraKey)
+	INFURA := os.Getenv("INFURA_ETH_SEP")
+
+	c, err := ethclient.DialContext(context.Background(), INFURA)
 	if err != nil {
 		log.Fatal("failed to connect to infura client")
 	}

@@ -2,7 +2,10 @@ module goeth
 
 go 1.25
 
-require github.com/ethereum/go-ethereum v1.16.3
+require (
+	github.com/ethereum/go-ethereum v1.16.3
+	github.com/joho/godotenv v1.5.1
+)
 
 require (
 	github.com/Microsoft/go-winio v0.6.2 // indirect
